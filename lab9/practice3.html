@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <h1> EECS 348 Lab Seven Practice Three</h1>
+    <h1>JavaScript Password Verification</h1>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2; /* Change this to your desired background color */
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        .input-group {
+            margin: 10px;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            background-color: #ffeecc; /* Change this to your desired background color */
+        }
+    </style>
+</head>
+
+<body>
+    <label for="password1">First Password:</label>
+    <input type="password" id="password1"><br>
+    <label for="password2">Second Password:</label>
+    <input type="password" id="password2"><br>
+    <button onclick="verifyPasswords()">Verify Passwords</button>
+
+    <div id="output"></div>
+
+    <script>
+        function verifyPasswords() {
+            // Get password values from input fields
+            const password1 = document.getElementById("password1").value;
+            const password2 = document.getElementById("password2").value;
+
+            // Get the output div element
+            const output = document.getElementById("output");
+
+            // Check if passwords are at least eight characters long and match
+            if (password1.length < 8 || password1 !== password2) {
+                output.style.color = "red";
+                output.innerHTML = "Passwords must be at least eight characters long and match.";
+            } else {
+                output.style.color = "green";
+                output.innerHTML = "Passwords are matched!";
+            }
+        }
+    </script>
+</body>
+
+</html>

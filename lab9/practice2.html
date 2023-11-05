@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <h1>EECS 348 Lab Seven Practice Two</h1>
+    <h1>CSS Font Control </h1>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2; /* Change this to your desired background color */
+        }
+
+        #paragraph {
+            border-style: solid;
+            border-width: 5px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .input-group {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="paragraph">
+        Paragraph to be altered.
+    </div>
+
+    <div class="input-group">
+        Border R(0-255): <input type="text" id="border_R" value="">
+    </div>
+    <div class="input-group">
+        Border G(0-255): <input type="text" id="border_G" value="">
+    </div>
+    <div class="input-group">
+        Border B(0-255): <input type="text" id="border_B" value="">
+    </div>
+    <div class="input-group">
+        Border Width: <input type="text" id="border_width" value="">
+    </div>
+    <div class="input-group">
+        Background R(0-255): <input type="text" id="bg_R" value="">
+    </div>
+    <div class="input-group">
+        Background G(0-255): <input type="text" id="bg_G" value="">
+    </div>
+    <div class="input-group">
+        Background B(0-255): <input type="text" id="bg_B" value="">
+    </div>
+
+    <button onclick="changeParagraphStyles()">Change the color and border!</button>
+
+    <script>
+        function changeParagraphStyles() {
+            // Get RGB values and border width from input fields
+            const borderR = document.getElementById("border_R").value;
+            const borderG = document.getElementById("border_G").value;
+            const borderB = document.getElementById("border_B").value;
+            const borderWidth = document.getElementById("border_width").value;
+            const bgR = document.getElementById("bg_R").value;
+            const bgG = document.getElementById("bg_G").value;
+            const bgB = document.getElementById("bg_B").value;
+
+            // Get the paragraph element
+            const paragraph = document.getElementById("paragraph");
+
+            // Apply the styles
+            paragraph.style.borderColor = `rgb(${borderR}, ${borderG}, ${borderB})`;
+            paragraph.style.borderWidth = `${borderWidth}px`;
+            paragraph.style.backgroundColor = `rgb(${bgR}, ${bgG}, ${bgB})`;
+        }
+    </script>
+</body>
+
+</html>
